@@ -1,0 +1,23 @@
+entity_type: Company
+
+properties:
+
+  Revenue:
+    canonical: Revenue
+    datatype: Money
+
+  Sales:
+    canonical: Revenue
+    datatype: Money
+
+  Turnover:
+    canonical: Revenue
+    datatype: Money
+
+  Country:
+    canonical: Country
+    datatype: String
+
+  Ticker:
+    canonical: Ticker
+    datatype: String
