@@ -8,17 +8,13 @@ def main():
     repository = InMemoryEntityRepository()
     service = EntityService(repository)
 
-    entity = service.create(
-        entity_type="Company",
-        name="Apple Inc.",
-    )
+    apple = service.register_company("Apple Inc.")
+    microsoft = service.register_company("Microsoft")
 
-    print("Entity created")
-    print(entity)
+    print("\nCompanies\n")
 
-    print()
-    print("Repository contents")
-    print(repository.list())
+    for company in service.list():
+        print(company)
 
 
 if __name__ == "__main__":

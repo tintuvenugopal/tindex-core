@@ -10,12 +10,18 @@ class EntityService:
     def __init__(self, repository: EntityRepository):
         self._repository = repository
 
-    def create(self, entity_type: str, name: str) -> Entity:
+    def register_company(self, name: str) -> Entity:
         entity = Entity.create(
-            entity_type=entity_type,
+            entity_type="Company",
             name=name,
         )
 
         self._repository.add(entity)
 
         return entity
+
+    def get(self, entity_id):
+        return self._repository.get_by_id(entity_id)
+
+    def list(self):
+        return self._repository.list()
